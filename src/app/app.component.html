@@ -1,25 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head></head>
-  <script>
-    function addItem() {
-        var ul = document.getElementById("dynamic list");
-        var li = document.createElement("li");
-        li.setAttribute('id', "Dynamic Content");
-        li.appendChild(document.createTextNode("Dynamic Content"));
-        ul.appendChild(li);
-    }
-  
-    function removeItem() {
-        document.getElementById("dynamic list").remove();
-    }     
-  </script> 
   <body> 
 <header>
-  <button  onclick="addItem()" class="btn btn-add">Add Content</button>
-  <button onclick="removeItem()" class="btn btn-rem">Remove dynamic Content</button>
-  <ul id="dynamic list">
-  </ul>
 </header>
 <div class="main-contener">
 

@@ -8,14 +8,15 @@ import { MyAppService } from './services/my-app.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers:[MyAppService]
 })
 
 export class AppComponent implements OnInit{
   users: user[] = [];
 constructor(private myAppService: MyAppService){}
 ngOnInit(): void {
-this.myAppService.getUsers();
+this.users=this.myAppService.users;
 }
 
 }

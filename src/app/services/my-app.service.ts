@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable,EventEmitter } from '@angular/core';
 import{HttpClient}from'@angular/common/http';
 import{Observable}from'rxjs/internal/Observable';
 import {user} from '../models/user';
@@ -8,6 +8,7 @@ import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
   providedIn: 'root'
 })
 export class MyAppService {
+ // public userAdded= new EventEmitter<user>();
   users:user[]=[];
   userToEdit?:user;
 
@@ -22,16 +23,13 @@ public EditUser(user:user)
   {
      return this.userToEdit=user;
   }
- public getUsers(){
-  return this.users;
- } 
-
  public addUser(user:user){
-  //let i=this.users.indexOf(user);
-  //if(this.users.findIndex(this.getUsers)==i){
-   // this.EditUser(user);
-  //}
-  return this.users.push(user);
+ // let i=this.users.indexOf(user);
+  //if(this.users.findIndex(this)==i){
+  // this.EditUser(user);
+ // }
+ //return this.userAdded.emit(user);
+   this.users.push(user);
  }
  
 }

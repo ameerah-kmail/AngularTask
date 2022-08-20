@@ -8,13 +8,15 @@ import { user } from '../../models/user';
 })
 export class ListComponent implements OnInit {
   users: user[] = [];
+  newUser: user = { name: '', age: '', email: '' };
   constructor(private myAppService: MyAppService) { }
 
   ngOnInit(): void {
+    this.users=this.myAppService.users;
   }
   //GET
   getUsers() {
-    this.users = this.myAppService.getUsers();
+    this.users = this.myAppService.users;
   }
   //DELETE
   deleteUser(user: user) {
@@ -26,8 +28,8 @@ export class ListComponent implements OnInit {
   }
   //POST
   addUser(user: user) { 
-    //this.myAppService.addUser(user);
-    this.users.push(user);
+    this.myAppService.addUser(user);
+    //this.users.push(user);
   }
 
 }
