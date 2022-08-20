@@ -10,22 +10,19 @@ import { MyAppService } from '../../services/my-app.service';
 })
 export class FormComponent implements OnInit {
   newUser: user = { name: '', age: '', email: '' };
-  //users: user[] = [];
-  ngOnInit(): void {
-   }
-  constructor(private myAppService: MyAppService) { }
+  //@Input() user?: user;
+  @Output() public userAdded = new EventEmitter<user>();
 
-  @Input() user?: user;
-  @Output() public userAdded= new EventEmitter<user>();
+  ngOnInit(): void { }
+  constructor(private myAppService: MyAppService) { }
 
   addUser(form: NgForm) {
     if (!form.form.valid) {
       form.form.markAllAsTouched();
     }
     else {
-     // this.userAdded.emit(this.newUser);
-     this.myAppService.addUser(this.newUser);
-     console.log(this.myAppService.users);
+      this.myAppService.users.push({ ...this.newUser });
+      console.log(this.myAppService.users);
     }
   }
 

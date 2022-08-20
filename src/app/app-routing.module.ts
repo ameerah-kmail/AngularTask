@@ -6,6 +6,7 @@ import { ListComponent } from './components/list/list.component';
 
 const routes: Routes = [
 {path:"Form",component:FormComponent},
+//{path:"List/:id",component:ListComponent},
 {path:"List",component:ListComponent},
 {path:"",component:FormComponent}
 ];

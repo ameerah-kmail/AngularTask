@@ -23,13 +23,4 @@ public EditUser(user:user)
   {
      return this.userToEdit=user;
   }
- public addUser(user:user){
- // let i=this.users.indexOf(user);
-  //if(this.users.findIndex(this)==i){
-  // this.EditUser(user);
- // }
- //return this.userAdded.emit(user);
-   this.users.push(user);
- }
- 
 }

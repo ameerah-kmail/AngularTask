@@ -1,23 +1,23 @@
 <form #form="ngForm">
     <fieldset>
-    <div>
-        <label>name</label>
-        <input [(ngModel)]="newUser.name" name="name" required type="text">
-        <span *ngIf="form.form.controls['name']?.touched 
+        <div>
+            <label>name</label>
+            <input [(ngModel)]="newUser.name" name="name" required type="text">
+            <span *ngIf="form.form.controls['name']?.touched 
         && !form.form.controls['name']?.valid "> required</span>
-    </div>
-    <div>
-        <label>age </label>
-        <input [(ngModel)]="newUser.age" name="age" required type="number">
-    </div>
-    <div>
-        <label>password </label>
-        <input [(ngModel)]="newUser.password" name="password" required type="password">
-    </div>
-    <div>
-        <label> email </label>
-        <input [(ngModel)]="newUser.email" name="email" required type="email">
-    </div>
-    <button (click)="addUser(form)">Save User</button>
+        </div>
+        <div>
+            <label>age </label>
+            <input [(ngModel)]="newUser.age" name="age" required type="number">
+        </div>
+        <div>
+            <label>password </label>
+            <input [(ngModel)]="newUser.password" name="password" required type="password">
+        </div>
+        <div>
+            <label> email </label>
+            <input [(ngModel)]="newUser.email" name="email" required type="email">
+        </div>
+        <button (click)="addUser(form)">Save User</button>
     </fieldset>
 </form>

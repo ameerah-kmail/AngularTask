@@ -1,20 +1,26 @@
+<div>
 <app-form (userAdded)="users.push($event)"></app-form>
 <table border="1">
-    <thead>
-      <th>name</th>
-      <th>age</th>
-      <th>email</th>
-      <th></th>
-    </thead>
-  
-    <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{ user.name }}</td>
-        <td>{{ user.age }}</td>
-        <td>{{ user.email }}</td>
-        <td><button (click)="editUser(user)">edit</button></td>
-        <td><button (click)="deleteUser(user)">delete</button></td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <th>ID</th>
+    <th>name</th>
+    <th>age</th>
+    <th>email</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let user of users;let i =index">
+      <td>{{i+1}}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.age }}</td>
+      <td>{{ user.email }}</td>
+      <!--<td><a routerLink="/ListComponent/{{i+1}}">jjj</a>-->
+      <td><button (click)="editUser(user)">edit</button></td>
+      <td><button (click)="deleteUser(user)">delete</button></td>
+    </tr>
  
+  </tbody>
+</table> 
+</div>
