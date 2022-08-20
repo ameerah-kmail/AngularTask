@@ -1,19 +1,46 @@
-<app-form (userAdded)="users.push($event)"></app-form>
-<table border="1">
-  <thead>
-    <th>name</th>
-    <th>age</th>
-    <th>email</th>
-    <th></th>
-  </thead>
+<!DOCTYPE html>
+<html lang="en">
+  <head></head>
+  <script>
+    function addItem() {
+        var ul = document.getElementById("dynamic list");
+        var li = document.createElement("li");
+        li.setAttribute('id', "Dynamic Content");
+        li.appendChild(document.createTextNode("Dynamic Content"));
+        ul.appendChild(li);
+    }
+  
+    function removeItem() {
+        document.getElementById("dynamic list").remove();
+    }     
+  </script> 
+  <body> 
+<header>
+  <button  onclick="addItem()" class="btn btn-add">Add Content</button>
+  <button onclick="removeItem()" class="btn btn-rem">Remove dynamic Content</button>
+  <ul id="dynamic list">
+  </ul>
+</header>
+<div class="main-contener">
 
-  <tbody>
-    <tr *ngFor="let user of users">
-      <td>{{ user.name }}</td>
-      <td>{{ user.age }}</td>
-      <td>{{ user.email }}</td>
-      <td><button (click)="EditUser(user)">edit</button></td>
-      <td><button (click)="DeleteUser(user)">delete</button></td>
-    </tr>
-  </tbody>
-</table>
+    <aside class="item sidebar">
+        <span class="inner-text">
+            <button routerLink="/List">Add new user</button>
+        </span>
+    </aside>
+
+    <main class="item content">
+        <span class="inner-text">
+          <router-outlet></router-outlet>
+            <!--<app-form (userAdded)="users.push($event)"></app-form>
+            <app-list></app-list>-->
+        </span>
+    </main>
+    
+</div>
+
+<footer>
+    <span>footer</span>
+</footer>
+</body>
+</html>

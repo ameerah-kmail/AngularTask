@@ -1,4 +1,5 @@
 <form #form="ngForm">
+    <fieldset>
     <div>
         <label>name</label>
         <input [(ngModel)]="newUser.name" name="name" required type="text">
@@ -18,4 +19,5 @@
         <input [(ngModel)]="newUser.email" name="email" required type="email">
     </div>
     <button (click)="addUser(form)">Save User</button>
+    </fieldset>
 </form>

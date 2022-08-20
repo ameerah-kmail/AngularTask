@@ -8,9 +8,30 @@ import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
   providedIn: 'root'
 })
 export class MyAppService {
+  users:user[]=[];
+  userToEdit?:user;
 
-  //constructor(private http:HttpClient) { }
-  //public getUser():Observable<user[]>{
-    //return this.http.get<user[]>(`${environment.apiUrl}/${this.url}`);
- // }
+public DeleteUser(user:user){
+  let i=this.users.indexOf(user);
+  if(i>=0){
+   return this.users.splice(i,1);
+  }
+  return ;
+}
+public EditUser(user:user)
+  {
+     return this.userToEdit=user;
+  }
+ public getUsers(){
+  return this.users;
+ } 
+
+ public addUser(user:user){
+  //let i=this.users.indexOf(user);
+  //if(this.users.findIndex(this.getUsers)==i){
+   // this.EditUser(user);
+  //}
+  return this.users.push(user);
+ }
+ 
 }
