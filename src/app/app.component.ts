@@ -9,14 +9,12 @@ import { MyAppService } from './services/my-app.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers:[MyAppService]
 })
 
 export class AppComponent implements OnInit{
-  users: user[] = [];
-constructor(private myAppService: MyAppService){}
-ngOnInit(): void {
-this.users=this.myAppService.users;
+ 
+ngOnInit(){
+
 }
 
 }

@@ -7,8 +7,9 @@
         && !form.form.controls['name']?.valid "> required</span>
         </div>
         <div>
-            <label>age </label>
-            <input [(ngModel)]="newUser.age" name="age" required type="number">
+            <label>date of birth</label>
+            <!--<input [(ngModel)]="newUser.age" name="age" required type="number">-->
+            <input [ngModel]="newUser.dof" name="dof" required type="date">
         </div>
         <div>
             <label>password </label>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MyAppService } from '../../services/my-app.service';
 import { user } from '../../models/user';
+import { DYNAMIC_TYPE, NodeWithI18n } from '@angular/compiler';
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -8,7 +10,7 @@ import { user } from '../../models/user';
 })
 export class ListComponent implements OnInit {
   users: user[] = [];
-  //newUser: user = { name: '', age: '', email: '' };
+  updatedUser: user = { name: '',dof:1, email: '' };
   constructor(private myAppService: MyAppService) { }
 
   ngOnInit(): void {
@@ -20,7 +22,7 @@ export class ListComponent implements OnInit {
   }
   //PUT
   editUser(user: user) {
-    this.myAppService.EditUser(user);
+   this.updatedUser= this.myAppService.EditUser(user);
   }
 
 }

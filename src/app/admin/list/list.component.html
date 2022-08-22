@@ -1,9 +1,9 @@
 <div>
-<app-form (userAdded)="users.push($event)"></app-form>
 <table border="1">
   <thead>
     <th>ID</th>
     <th>name</th>
+    <th>date of birth</th>
     <th>age</th>
     <th>email</th>
     <th>Edit</th>
@@ -14,9 +14,9 @@
     <tr *ngFor="let user of users;let i =index">
       <td>{{i+1}}</td>
       <td>{{ user.name }}</td>
-      <td>{{ user.age }}</td>
-      <td>{{ user.email }}</td>
-      <!--<td><a routerLink="/ListComponent/{{i+1}}">jjj</a>-->
+      <td>{{user.dof }}</td>
+      <td>{{ user.dof| age}}</td>
+      <td>{{ user.email }}</td> 
       <td><button (click)="editUser(user)">edit</button></td>
       <td><button (click)="deleteUser(user)">delete</button></td>
     </tr>
